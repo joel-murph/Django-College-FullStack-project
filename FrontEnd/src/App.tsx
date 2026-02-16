@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import Hostel from './Pages/Hostel'
+import Placements from './Pages/Placements'
+import Contact from './Pages/Contact'
+import Navbar from './Components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="text-red-500 font-bold text-xl">
-        Tailwind now works 🔥
-      </div>
-
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hostel" element={<Hostel />} />
+        <Route path="/placements" element={<Placements />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </>
   )
 }
